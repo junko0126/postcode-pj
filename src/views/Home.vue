@@ -16,10 +16,9 @@ export default {
   },
   async created() {
     const item = await axios.get(
-      'curl https://apis.postcode-jp.com/api/v4/postcodes/1000001 \
-  -G -v \
-  -d "apikey=scXXQD1i29VdtnFS1QOuruB2oG6GIyNseCmaqEW"'
-    );
+      `https://apis.postcode-jp.com/api/v4/postcodes/1000001?apikey=scXXQD1i29VdtnFS1QOuruB2oG6GIyNseCmaqE`
+    );console.log(item);
+    
     const postCode =item.data;
     this.postcode = postCode.postcode;
   }
